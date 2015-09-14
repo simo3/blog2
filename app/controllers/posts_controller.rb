@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :search_post, only:[:show, :edit, :update, :destroy]
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page])
   end
 
   def create

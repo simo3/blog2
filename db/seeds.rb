@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#Category.create([
+  #{genre: 'work'},
+  #{genre: 'hobby'},
+  #{genre: 'life'}
+  #])
+100.times do |index|
+  Post.create(
+    title: "#{index}回目の投稿",
+    content:'ほげ',
+    category_id: rand(3)+1
+    )
+end
