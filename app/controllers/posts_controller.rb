@@ -29,7 +29,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-
+    @post = Post.find(params[:id])
+    @post.destroy
+    @post.save
+    redirect_to posts_url(@post)
   end
 
   private
