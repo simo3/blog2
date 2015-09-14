@@ -1,16 +1,2 @@
 <h1>New Entry</h1>
-<%= form_for @post do |f| %>
-<p>
-  <%= f.label 'Title：' %>
-  <%= f.text_field :title %>
-</p>
-<p>
-  <%= f.label 'Content：' %>
-  <%= f.text_text :content %>
-</p>
-<p>
-  <%= f.label 'Category：' %>
-  <%= f.text_field :category %>
-</p>
-<%= f.submit 'Entry' %>
-<% end %>
+<%= render 'form' %>
