@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
   before_action :search_post, only:[:show, :edit, :update, :destroy]
   def index
-    @posts = Post.page(params[:page])
+    @q = Post.post_order.ransack(params[:q])
+    @posts = @q.result.page(params[:page])
+
+
   end
 
   def create
