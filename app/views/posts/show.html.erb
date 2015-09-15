@@ -5,7 +5,7 @@
   <strong>content:</strong><br/><%= @post.content %>
 </div>
 <div>
-  <strong>category:</strong><%= @post.category %>
+  <strong>category:</strong><%= @post.category.genre %>
 </div>
 <%= link_to 'Back to TOP', posts_path %>
 <%= link_to 'Edit', edit_post_path %>
