@@ -8,8 +8,8 @@
   <%= f.text_area :content %>
 </div>
 <div>
-  <%= f.label 'Category:' %>
-  <%= f.text_field :category %>
+  <%= f.label :category_id %>
+  <%= f.collection_select(:category_id, Category.all, :id, :genre) %>
 </div>
 
 <%= f.submit 'Entry' %>
