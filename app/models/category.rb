@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many category
+  has_many :post
 end
