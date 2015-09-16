@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :search_post, only:[:show, :edit, :update, :destroy]
+  before_action :authenticate_user!# only:[:show, :edit, :update, :destroy]
   def index
     @q = Post.post_order.ransack(params[:q])
     @posts = @q.result.page(params[:page])

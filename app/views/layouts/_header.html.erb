@@ -1,10 +1,21 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header" style="float:left;">
       <a class="navbar-brand" href="<%= posts_path %>">
         <%= image_tag("smart-home-icon.png", height:30) %>
       </a>
     </div>
     <h1>Test Blog</h1>
+  </div>
+  <div style="float:right">
+  <ul>
+  <% if user_signed_in? %>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to '設定変更', edit_user_registration_path %></li>
+  <% else %>
+    <li><%= link_to '新規登録', new_user_registration_path %></li>
+    <li><%= link_to 'Sign in', new_user_session_path %></li>
+  <% end %>
+  </ul>
   </div>
 </nav>
