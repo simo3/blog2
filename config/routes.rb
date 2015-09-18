@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   #get 'comments/create'
   #post 'comments' => 'comments#creat'
-  post 'comments' => 'comments#create'
+  #post 'comments' => 'comments#create'
+  #get 'comments/destroy' => 'comments#destroy'
 
-  get 'comments/destroy'
+  #get 'comments/destroy'
 
   devise_for :users
   resources :posts
+  resources :comments, only:[:create, :destroy]
   root 'posts#index'
 
 
